@@ -4,13 +4,10 @@ import sys
 from datetime import datetime
 from slugify import slugify
 import argparse
-from config import load_config
 
 
-def create_post_skeleton(post_name):
+def create_post_skeleton(post_name, author=None):
     """Create a new post skeleton with the given name and author."""
-    config = load_config()
-    author = config["author"]
     # Create slug from post name
     slug = slugify(post_name)
     post_dir = os.path.join("posts", slug)
@@ -29,7 +26,7 @@ def create_post_skeleton(post_name):
 
     frontmatter = f"""---
 date: {today}
-author: {author}
+author: {author or "Unknown"}
 tags: []
 title: {post_name}
 excerpt:
