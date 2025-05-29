@@ -1,9 +1,13 @@
 ---
+author: Alice Bloggs
 date: 2024-06-01
-author: Jane Doe
-tags: [placeholder, demo, d3js]
+excerpt: This is a placeholder post demonstrating all elements, including images,
+  footnotes, code, lists, and an inline D3.js graph.
+tags:
+- placeholder
+- demo
+- d3js
 title: Placeholder Post With D3.js Example
-excerpt: This is a placeholder post demonstrating all elements, including images, footnotes, code, lists, and an inline D3.js graph.
 ---
 
 This is a placeholder post to demonstrate the structure and formatting of a typical blog entry. Below you'll find examples of images, lists, code blocks, blockquotes, footnotes, and even a D3.js graph embedded using inline JavaScript.
@@ -81,4 +85,4 @@ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor
 ## Footnotes
 
 [^1]: This is a placeholder footnote for demonstration purposes.
-[^2]: Another example footnote with more placeholder text. 
+[^2]: Another example footnote with more placeholder text.

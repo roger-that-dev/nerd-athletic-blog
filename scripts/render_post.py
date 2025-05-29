@@ -4,6 +4,7 @@ import markdown
 from jinja2 import Environment, FileSystemLoader
 from slugify import slugify
 from inline_footnotes_plugin import InlineFootnotesExtension
+from config import BlogConfig
 from utils import format_date, extract_image_filenames
 
 
@@ -11,7 +12,9 @@ def slugify_title(title):
     return slugify(title)
 
 
-def render_post(post, post_template_path, web_root="web"):
+def render_post(
+    post, post_template_path, web_root="web", config: BlogConfig = None
+):
     """Render a single Post object to HTML using a Jinja2 template."""
     post_dir = os.path.dirname(post.source_path)
 
@@ -69,6 +72,7 @@ def render_post(post, post_template_path, web_root="web"):
         tags=post.tags,
         content=html_content,
         reading_time=post.reading_time,
+        blog_name=config["blog_name"],
     )
 
     # Write output HTML

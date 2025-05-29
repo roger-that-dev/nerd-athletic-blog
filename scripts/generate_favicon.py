@@ -2,7 +2,17 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 
-def generate_favicon():
+def generate_favicon(initials: str) -> None:
+    """Generate a favicon with the given initials.
+
+    Args:
+        initials: A string containing the initials to display in the favicon.
+                 Only the first two characters will be used and converted to
+                 uppercase.
+
+    Returns:
+        None: The function saves the favicon file but doesn't return anything.
+    """
     # Create a 32x32 image with a blue background
     size = 32
     img = Image.new("RGBA", (size, size), (0, 120, 255, 255))
@@ -15,8 +25,8 @@ def generate_favicon():
         # Fallback to default font
         font = ImageFont.load_default()
 
-    # Draw "ND" text in white
-    text = "NA"
+    # Takes first two letters of initials only
+    text = initials[:2].upper()
     text_bbox = draw.textbbox((0, 0), text, font=font)
     text_width = text_bbox[2] - text_bbox[0]
     text_height = text_bbox[3] - text_bbox[1]
@@ -37,4 +47,4 @@ def generate_favicon():
 
 
 if __name__ == "__main__":
-    generate_favicon()
+    generate_favicon("AB")

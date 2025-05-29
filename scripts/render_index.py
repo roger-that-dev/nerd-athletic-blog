@@ -1,9 +1,10 @@
 import os
 from jinja2 import Environment, FileSystemLoader
+from config import BlogConfig
 from utils import format_date
 
 
-def render_index(posts, template_path, output_path):
+def render_index(posts, template_path, output_path, config: BlogConfig = None):
     env = Environment(loader=FileSystemLoader(os.path.dirname(template_path)))
     env.filters["format_date"] = format_date
 
@@ -21,7 +22,9 @@ def render_index(posts, template_path, output_path):
     # Render template and write output
     template = env.get_template(os.path.basename(template_path))
     try:
-        html = template.render(posts=posts_for_template)
+        html = template.render(
+            posts=posts_for_template, blog_name=config["blog_name"]
+        )
     except Exception as e:
         raise RuntimeError(f"Failed to render index template: {str(e)}")
 

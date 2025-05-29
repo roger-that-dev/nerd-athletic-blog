@@ -3,9 +3,12 @@ import shutil
 import markdown
 from jinja2 import Environment, FileSystemLoader
 from utils import format_date
+from config import BlogConfig
 
 
-def render_static_page(page, template_path, web_root="web"):
+def render_static_page(
+    page, template_path, web_root="web", config: BlogConfig = None
+):
     """Render a single static page to HTML using a Jinja2 template."""
     page_dir = os.path.dirname(page.source_path)
 
@@ -50,6 +53,7 @@ def render_static_page(page, template_path, web_root="web"):
         date=page.date,
         excerpt=page.excerpt,
         content=html_content,
+        blog_name=config["blog_name"],
     )
 
     # Write output HTML

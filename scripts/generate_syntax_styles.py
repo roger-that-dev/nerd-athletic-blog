@@ -1,8 +1,13 @@
 from pygments.formatters import HtmlFormatter
 
 
-def generate_syntax_styles():
-    """Generate CSS styles for syntax highlighting using Pygments."""
+def generate_syntax_styles() -> None:
+    """Generate CSS styles for syntax highlighting using Pygments.
+
+    Returns:
+        None: The function saves the CSS file but doesn't return anything.
+    """
+
     # Generate CSS using the default style
     # codehilite uses .codehilite class instead of .highlight
     formatter = HtmlFormatter(style="default", cssclass="codehilite")

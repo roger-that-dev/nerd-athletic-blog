@@ -1,9 +1,13 @@
 ---
-title: Understanding Python Decorators
+author: Alice Bloggs
 date: 2024-03-14
-excerpt: A comprehensive guide to Python decorators, from basic concepts to advanced usage patterns.
-tags: [python, decorators, advanced-python]
-author: Roger Willis
+excerpt: A comprehensive guide to Python decorators, from basic concepts to advanced
+  usage patterns.
+tags:
+- python
+- decorators
+- advanced-python
+title: Understanding Python Decorators
 ---
 
 # Understanding Python Decorators
@@ -134,4 +138,3 @@ def unreliable_function():
 Decorators are a powerful tool in Python that can help you write more maintainable and reusable code. They're particularly useful for cross-cutting concerns like logging, timing, caching, and access control.
 
 Remember: "With great power comes great responsibility." Use decorators judiciously and always consider their impact on code readability and maintainability.
-

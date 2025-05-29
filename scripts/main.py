@@ -14,6 +14,7 @@ import frontmatter
 from generate_syntax_styles import generate_syntax_styles
 from generate_favicon import generate_favicon
 from utils import extract_image_filenames
+from config import load_config
 
 
 @dataclass
@@ -173,6 +174,9 @@ def build_tag_mapping(posts):
 
 
 def main():
+    # Load blog configuration
+    config = load_config()
+
     generate_syntax_styles()
 
     # Copy static assets
@@ -181,10 +185,15 @@ def main():
     # Collect and render posts
     posts = collect_markdown_files("posts", Post)
     for post in posts:
-        render_post(post, "templates/post.tmpl", web_root="web")
+        render_post(post, "templates/post.tmpl", web_root="web", config=config)
 
     # Render index
-    render_index(posts, "templates/index.tmpl", output_path="web/index.html")
+    render_index(
+        posts,
+        "templates/index.tmpl",
+        output_path="web/index.html",
+        config=config,
+    )
 
     # Render tag pages
     tags_to_posts = build_tag_mapping(posts)
@@ -194,14 +203,17 @@ def main():
             tag_posts,
             "templates/tag.tmpl",
             output_path=f"web/tag/{slugify(tag)}/index.html",
+            config=config,
         )
 
     # Collect and render static pages
     static_pages = collect_markdown_files("static", StaticPage)
     for page in static_pages:
-        render_static_page(page, "templates/static.tmpl", web_root="web")
+        render_static_page(
+            page, "templates/static.tmpl", web_root="web", config=config
+        )
 
-    generate_favicon()
+    generate_favicon("ABC")
 
 
 if __name__ == "__main__":

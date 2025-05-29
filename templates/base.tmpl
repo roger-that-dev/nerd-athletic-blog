@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Nerd Athletic{% endblock %}</title>
+    <title>{{ blog_name }} | {% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/sidenotes.css" />
@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="/">NERD ATHLETIC</a>
+            <a href="/">{{ blog_name }}</a>
         </div>
         <nav>
             <a href="/about/" class="nav-link">ABOUT</a>
@@ -24,12 +24,12 @@
     <footer class="site-footer">
         <div class="footer-content">
             <div class="copyright">
-                <p>© 2025 Nerd Athletic.</p>
+                <p>© 2025 {{ blog_name }}.</p>
             </div>
             <div class="social-links">
-                <a href="https://nerdathletic.substack.com">Substack</a>
-                <a href="https://github.com/roger-that-dev/">GitHub</a>
-                <a href="https://www.strava.com/athletes/52649272">Strava</a>
+                <a href="https://substack.com">Substack</a>
+                <a href="https://github.com/">GitHub</a>
+                <a href="https://www.instagram.com/">Instagram</a>
             </div>
         </div>
     </footer>

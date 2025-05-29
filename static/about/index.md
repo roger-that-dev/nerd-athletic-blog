@@ -1,6 +1,6 @@
 ---
 date: 2024-03-15
-title: About Pythonic Ramblings
+title: About
 url: /about
 excerpt: Welcome to Pythonic Ramblings, where we turn coffee into code and bugs into features. A blog for Python enthusiasts who aren't afraid to laugh at their own stack traces.
 ---

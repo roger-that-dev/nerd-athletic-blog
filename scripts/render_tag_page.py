@@ -2,9 +2,12 @@ import os
 from jinja2 import Environment, FileSystemLoader
 from slugify import slugify
 from utils import format_date
+from config import BlogConfig
 
 
-def render_tag_page(tag, posts, template_path, output_path):
+def render_tag_page(
+    tag, posts, template_path, output_path, config: BlogConfig = None
+):
     """Render a tag page listing all posts with that tag."""
     env = Environment(loader=FileSystemLoader(os.path.dirname(template_path)))
     env.filters["slugify"] = slugify
@@ -24,7 +27,9 @@ def render_tag_page(tag, posts, template_path, output_path):
     # Render template and write output
     template = env.get_template(os.path.basename(template_path))
     try:
-        html = template.render(posts=posts_for_template, tag=tag)
+        html = template.render(
+            posts=posts_for_template, tag=tag, blog_name=config["blog_name"]
+        )
     except Exception as e:
         raise RuntimeError(f"Failed to render tag template: {str(e)}")
 

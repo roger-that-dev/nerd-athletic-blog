@@ -1,8 +1,13 @@
 ---
-title: The Art of Code Refactoring
+author: Alice Bloggs
 date: 2024-03-15
-excerpt: A deep dive into the principles and practices of code refactoring, with practical examples and best practices.
-tags: [python, refactoring, best-practices]
+excerpt: A deep dive into the principles and practices of code refactoring, with practical
+  examples and best practices.
+tags:
+- python
+- refactoring
+- best-practices
+title: The Art of Code Refactoring
 ---
 
 # The Art of Code Refactoring
@@ -102,4 +107,3 @@ class VIPCustomer(Customer):
 Refactoring is an essential skill for maintaining healthy codebases. By regularly refactoring, you can keep your code clean, maintainable, and adaptable to changing requirements.
 
 Remember: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." - Martin Fowler
-

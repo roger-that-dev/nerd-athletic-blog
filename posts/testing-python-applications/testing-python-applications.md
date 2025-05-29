@@ -1,9 +1,14 @@
 ---
+author: Alice Bloggs
 date: 2024-03-11
-author: Roger Willis
-tags: [python, testing, pytest, tdd]
+excerpt: A comprehensive guide to testing Python applications, covering unit testing,
+  integration testing, and test-driven development.
+tags:
+- python
+- testing
+- pytest
+- tdd
 title: Testing Python Applications
-excerpt: A comprehensive guide to testing Python applications, covering unit testing, integration testing, and test-driven development.
 ---
 
 # Testing Python Applications
@@ -238,4 +243,3 @@ Remember to:
 - Use appropriate testing tools and frameworks
 - Maintain good test coverage
 - Follow testing best practices
-

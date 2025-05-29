@@ -1,9 +1,14 @@
 ---
+author: Alice Bloggs
 date: 2024-03-13
-author: Roger Willis
-tags: [python, fastapi, api, web-development]
+excerpt: A comprehensive guide to building modern, high-performance REST APIs using
+  FastAPI, Python's fastest web framework.
+tags:
+- python
+- fastapi
+- api
+- web-development
 title: Building a REST API with FastAPI
-excerpt: A comprehensive guide to building modern, high-performance REST APIs using FastAPI, Python's fastest web framework.
 ---
 
 # Building a REST API with FastAPI
@@ -187,4 +192,3 @@ Remember to:
 - Add comprehensive documentation
 - Write tests for your endpoints
 - Follow security best practices
-

@@ -1,3 +1,22 @@
+"""A Markdown extension for handling inline footnotes with sidenotes.
+
+This module provides a custom Markdown extension that converts footnotes into
+inline sidenotes. It supports both desktop and mobile layouts, with footnotes
+appearing as sidenotes on desktop and inline notes on mobile.
+
+Example usage:
+    ```markdown
+    Here's a sentence with a footnote[^1].
+
+    [^1]: This is the footnote text.
+    ```
+
+    Will be rendered as:
+    - Desktop: Footnote appears as a sidenote
+    - Mobile: Footnote appears inline after the reference
+"""
+
+from typing import Dict, List, Match, Any
 import re
 from markdown.extensions import Extension
 from markdown.inlinepatterns import Pattern
@@ -6,10 +25,35 @@ import xml.etree.ElementTree as etree
 
 
 class FootnoteCollector(Preprocessor):
-    def __init__(self, extension):
+    """Collects and processes footnotes from the markdown text.
+
+    This preprocessor:
+    1. Collects all footnotes defined in the text
+    2. Removes the footnotes section
+    3. Removes horizontal rules at the end
+    4. Removes individual footnote definitions
+    """
+
+    def __init__(self, extension: "InlineFootnotesExtension") -> None:
+        """Initialize the footnote collector.
+
+        Args:
+            extension: The parent extension instance that holds the footnotes
+                      dictionary.
+        """
         self.extension = extension
 
-    def run(self, text):
+    def run(self, text: str | List[str]) -> List[str]:
+        """Process the markdown text to collect and remove footnotes.
+
+        Args:
+            text: The markdown text to process, either as a string or list of
+                 lines.
+
+        Returns:
+            List[str]: The processed text with footnotes removed, split into
+                      lines.
+        """
         if isinstance(text, list):
             text = "\n".join(text)
 
@@ -36,11 +80,30 @@ class FootnoteCollector(Preprocessor):
 
 
 class InlineFootnotesPattern(Pattern):
-    def __init__(self, pattern, extension):
+    """Pattern for matching and converting footnote references to HTML."""
+
+    def __init__(
+        self, pattern: str, extension: "InlineFootnotesExtension"
+    ) -> None:
+        """Initialize the footnote pattern matcher.
+
+        Args:
+            pattern: The regex pattern to match footnote references.
+            extension: The parent extension instance.
+        """
         super().__init__(pattern)
         self.extension = extension
 
-    def handleMatch(self, m):
+    def handleMatch(self, m: Match[str]) -> etree.Element:
+        """Convert a footnote reference to HTML elements.
+
+        Args:
+            m: The regex match object containing the footnote reference.
+
+        Returns:
+            etree.Element: A span element containing the footnote reference
+                          and its associated sidenote.
+        """
         footnote_id = m.group(2)
         footnote_text = self.extension.footnotes.get(footnote_id, "")
 
@@ -68,11 +131,23 @@ class InlineFootnotesPattern(Pattern):
 
 
 class InlineFootnotesExtension(Extension):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.footnotes = {}
+    """Markdown extension for handling inline footnotes with sidenotes."""
 
-    def extendMarkdown(self, md):
+    def __init__(self, **kwargs: Any) -> None:
+        """Initialize the extension.
+
+        Args:
+            **kwargs: Additional keyword arguments passed to the parent class.
+        """
+        super().__init__(**kwargs)
+        self.footnotes: Dict[str, str] = {}
+
+    def extendMarkdown(self, md: Any) -> None:
+        """Register the extension's processors with the markdown instance.
+
+        Args:
+            md: The markdown instance to extend.
+        """
         md.preprocessors.register(
             FootnoteCollector(self), "footnote_collector", 25
         )

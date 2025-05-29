@@ -72,12 +72,14 @@ Key dependencies:
 
 #### Content Features
 
+- Simple config system (`config.yaml`) allowing specification of blog name and author
 - Tag system with auto-generated tag pages
 - Index page showing all posts (no pagination yet)
 - Sidenotes that collapse to clickable inline notes on mobile
 - Syntax highlighting for code blocks
 - Images (locally served as well as externally) with captions
 - Auto-generated favicon
+- Script to generate syntax highlighting styles
 
 #### Technical Details
 
@@ -90,13 +92,21 @@ Key dependencies:
 
 ### Implementation Notes
 
-- There are a few example posts to demonstrate features - they are all AI generated.
+- There are a few example posts to demonstrate features - they are all AI generated
 - Built using Python with Jinja2 templating
 - Simple architecture prioritizing maintainability
 - Some code duplication exists but codebase remains understandable
 - Tested with 100+ posts, builds in seconds
+
+### Limitations
+
+- Nev bar links need to be added manually. See `base.tmpl` - no point in automating this yet
+- The colour scheme is white, grey and blue, if you want to change it you need to change the CSS
+- There is support for only one author name
 - Currently no incremental builds or build diffing (not needed yet)
 - Not a huge amount of error handling at this point in time
+- Much of the code is not yet typed
+- The favicon can only be two initials
 
 ## Project Structure
 

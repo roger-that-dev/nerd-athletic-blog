@@ -1,9 +1,14 @@
 ---
-title: Docker for Python Developers
+author: Alice Bloggs
 date: 2024-03-12
-excerpt: A practical guide to using Docker in Python development, from basic concepts to advanced containerization techniques.
-tags: [python, docker, devops, containerization]
-author: Roger Willis
+excerpt: A practical guide to using Docker in Python development, from basic concepts
+  to advanced containerization techniques.
+tags:
+- python
+- docker
+- devops
+- containerization
+title: Docker for Python Developers
 ---
 
 # Docker for Python Developers
@@ -258,4 +263,3 @@ Remember to:
 - Optimize your Dockerfile for caching
 - Use Docker Compose for complex applications
 - Keep your base images updated
-
