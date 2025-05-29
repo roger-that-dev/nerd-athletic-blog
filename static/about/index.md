@@ -59,4 +59,8 @@ This site is built with custom Python tooling. It's a static site generator whic
 
 My background spans computer science, chartered accountancy, bank auditing, startups and a decade working in blockchain and crypto. This blog and the running tools I'm building serve as my antidote to the crypto world. A return to something more tangible and down to earth, where the only thing being optimised is how fast you can move your own two feet.
 
+## Copyright Notice
+
+All content on this blog, including but not limited to articles, code, and images, is copyright Roger Willis. No part of this content may be reproduced, distributed, or transmitted in any form or by any means without the prior written permission of the author.
+
 If you have questions, feedback, or want to collaborate, feel free to reach out at rojeee [at] gmail [dot] com.
