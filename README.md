@@ -45,6 +45,14 @@ Key dependencies:
 
 ## Usage
 
+### Setup
+
+- Remove the example posts from the `/post` directory
+- Remove/replace the sample about page in the `/static/about` directory
+- Update the `config.yaml`
+- Update `base.tmpl` with nav bar links in the header and social links in the footer
+- Update the favicon generation by editing the string supplied to `generate_favicon`
+
 ### Building and Serving
 
 - Run `main.py` to build the site (no arguments needed)
