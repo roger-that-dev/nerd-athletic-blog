@@ -88,6 +88,7 @@ Key dependencies:
 - Images (locally served as well as externally) with captions
 - Auto-generated favicon
 - Script to generate syntax highlighting styles
+- In mobile mode nav bar links show as a burdger menu to avoid crowding with smaller viewports
 
 #### Technical Details
 
@@ -115,6 +116,7 @@ Key dependencies:
 - Not a huge amount of error handling at this point in time
 - Much of the code is not yet typed
 - The favicon can only be two initials
+- There are no tests and I probably won't write any unless I start having problems
 
 ## Project Structure
 
@@ -160,7 +162,6 @@ blog/
     * Need a page to enumerate all series and their posts.
     * An adjacent feature to tags
 * Produce a dynamic links menu based upon the static pages, etc.
-    * Burger menu for mobile if there are too many links.
 * Light/dark mode
 * Add image zoom for images in blog posts.
     * Pops up a modal with the large size image in
