@@ -969,4 +969,23 @@ li code {
     .post-list-tags .post-tag {
         font-size: 0.6rem;
     }
+
+    /* Footer mobile styles */
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .copyright {
+        order: 2;
+    }
+
+    .social-links {
+        order: 1;
+    }
 }
