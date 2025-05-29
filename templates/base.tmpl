@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nerd Athletic{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/sidenotes.css" />
+    <link rel="stylesheet" href="/css/syntax.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script src="/js/sidenotes.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/">NERD ATHLETIC</a>
+        </div>
+        <nav>
+            <a href="/about/" class="nav-link">ABOUT</a>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="copyright">
+                <p>© 2025 Nerd Athletic.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://nerdathletic.substack.com">Substack</a>
+                <a href="https://github.com/roger-that-dev/">GitHub</a>
+                <a href="https://www.strava.com/athletes/52649272">Strava</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

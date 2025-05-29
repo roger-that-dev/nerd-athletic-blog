@@ -1,0 +1,142 @@
+/* Sidenotes CSS */
+:root {
+    --sidenote-width: 250px;
+    --sidenote-offset: 2rem;
+    --sidenote-text-color: var(--color-mid-gray);
+    --sidenote-ref-color: var(--color-primary);
+    --sidenote-spacing: 2rem; /* Space between sidenotes */
+}
+
+/* Reference superscripts in text */
+.sidenote-ref {
+    font-size: 0.6em;
+    font-weight: 700;
+    vertical-align: super;
+    line-height: 0;
+    position: relative;
+    color: var(--sidenote-ref-color);
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 3px;
+    font-family: var(--font-sans);
+}
+
+/* Sidenotes container - visible on desktop */
+.sidenotes-container {
+    position: absolute;
+    top: 0;
+    right: calc(-1 * (var(--sidenote-width) + 30px));
+    width: var(--sidenote-width);
+    font-family: var(--font-sans);
+    box-sizing: border-box; /* Move up to align with first paragraph */
+    margin-top: -1.5rem;
+}
+
+.sidenotes-container h3 {
+    border-top: 5px solid var(--color-dark);
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    border-bottom: none;
+}
+
+/* Individual sidenote */
+.sidenote {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--sidenote-text-color);
+    margin-bottom: 0;
+    position: absolute;
+    width: var(--sidenote-width);
+    right: calc(-1 * (var(--sidenote-width) + var(--sidenote-offset)));
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+    font-family: var(--font-sans);
+}
+
+.sidenote-num {
+    color: var(--sidenote-ref-color);
+    font-size: 0.75rem;
+    vertical-align: super;
+    margin-right: 0.25rem;
+    font-weight: bold;
+    font-family: var(--font-sans);
+}
+
+/* Mobile note */
+.mobile-note {
+    display: none;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--sidenote-text-color);
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    background: var(--color-lightest-gray);
+    font-family: var(--font-sans);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid var(--sidenote-ref-color);
+}
+
+.mobile-note.active {
+    display: block;
+}
+
+/* Hover effect for desktop */
+@media (min-width: 1051px) {
+    .sidenote-ref:hover + .sidenote,
+    .sidenote:hover {
+        opacity: 1;
+    }
+    
+    .sidenote-ref:hover {
+        color: var(--color-dark);
+        cursor: pointer;
+    }
+
+    .sidenote {
+        cursor: pointer;
+    }
+
+}
+
+/* Media query for mobile */
+@media (max-width: 1150px) {
+    .sidenote {
+        display: none;
+    }
+    
+    .sidenotes-container {
+        display: none;
+    }
+    
+    .sidenote-ref {
+        color: var(--sidenote-ref-color);
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .sidenote-ref:target {
+        color: var(--color-dark);
+    }
+
+    .post-content {
+        padding-right: 0;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Make mobile notes appear on a new line */
+    .sidenote-ref {
+        display: inline-block;
+    }
+
+    .mobile-note {
+        display: none;
+        margin-left: 0;
+        margin-right: 0;
+        clear: both;
+    }
+}

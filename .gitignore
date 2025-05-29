@@ -1,0 +1,7 @@
+/web
+.DS_Store
+__pycache__
+__old
+*.egg-info
+.venv
+.vscode

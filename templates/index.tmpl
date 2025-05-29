@@ -1,0 +1,29 @@
+{% extends "base.tmpl" %}
+{% block content %}
+<main class="post-list-container">
+    <div class="post-list">
+        {% for post in posts %}
+        <article class="post-list-item">
+            <div class="post-list-meta">
+                <div class="post-list-date">{{ post.date|format_date }}</div>
+                <div class="post-list-tags">
+                    {% for tag in post.tags %}
+                    <span class="post-tag"><a href="/tag/{{ tag }}/">{{ tag }}</a></span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% if post.image_url %}
+            <div class="post-list-image">
+                <a href="{{ post.url }}"><img src="{{ post.image_url }}" alt="{{ post.image_alt }}" /></a>
+            </div>
+            {% endif %}
+            <div class="post-list-content">
+                <a href="{{ post.url }}" class="post-list-title-link"><h2 class="post-list-title">{{ post.title }}</h2></a>
+                <a href="{{ post.url }}" class="post-list-excerpt-link"><div class="post-list-excerpt">{{ post.excerpt }}</div></a>
+                <div class="post-list-readtime">{{ post.reading_time }} MIN READ</div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %} 

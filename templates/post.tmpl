@@ -1,0 +1,28 @@
+{% extends "base.tmpl" %}
+{% block title %}{{ title }} | Nerd Athletic{% endblock %}
+{% block content %}
+<main class="content">
+    <article class="post">
+        <header class="post-header">
+            <div class="post-meta">
+                <span class="reading-time-inline">{{ reading_time }} min read</span> BY <a href="/author">{{ author }}</a> — {{ date|format_date }}
+            </div>
+            <h1 class="post-title">{{ title }}</h1>
+            <p class="post-excerpt">{{ excerpt }}</p>
+        </header>
+        <div class="post-content">
+            <div class="sidenotes-container">
+                <h3>NOTES</h3>
+            </div>
+            {{ content }}
+        </div>
+        <div class="tags-container">
+            <div class="tags">
+                {% for t in tags %}
+                    <a href="/tag/{{ t|slugify }}" class="post-tag">{{ t }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+</main>
+{% endblock %} 
