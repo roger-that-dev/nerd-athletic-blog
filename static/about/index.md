@@ -57,7 +57,7 @@ This site is built with custom Python tooling. It's a static site generator whic
 
 <img src="nerdy-runner.png" alt="Nerdy Runner" style="display: block; float: right; max-width: 250px; margin: 0;" />
 
-My background spans computer science, chartered accountancy, bank auditing, startups and a decade working in blockchain and crypto. This blog and the running tools I'm building serve as my antidote to the crypto world. A return to something more tangible and down to earth, where the only thing being optimised is how fast you can move your own two feet.
+My [background](/author/roger-willis/) spans computer science, chartered accountancy, bank auditing, startups and a decade working in blockchain and crypto. This blog and the running tools I'm building serve as my antidote to the crypto world. A return to something more tangible and down to earth, where the only thing being optimised is how fast you can move your own two feet.
 
 ## Copyright Notice
 
