@@ -227,7 +227,7 @@ def main():
             page, "templates/static.tmpl", web_root="web", config=config
         )
 
-    generate_favicon("ABC")
+    generate_favicon("NA")
 
 
 if __name__ == "__main__":
