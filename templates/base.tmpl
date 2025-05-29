@@ -8,15 +8,22 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/sidenotes.css" />
     <link rel="stylesheet" href="/css/syntax.css" />
+    <link rel="stylesheet" href="/css/burger-menu.css" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <script src="/js/sidenotes.js" defer></script>
+    <script src="/js/burger-menu.js" defer></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">
             <a href="/">{{ blog_name }}</a>
         </div>
-        <nav>
+        <button class="burger-menu" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu">
             <a href="/about/" class="nav-link">ABOUT</a>
         </nav>
     </header>
