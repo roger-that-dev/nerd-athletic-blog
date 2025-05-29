@@ -4,7 +4,8 @@
     --sidenote-offset: 2rem;
     --sidenote-text-color: var(--color-mid-gray);
     --sidenote-ref-color: var(--color-primary);
-    --sidenote-spacing: 2rem; /* Space between sidenotes */
+    --sidenote-spacing: 2rem;
+    /* Space between sidenotes */
 }
 
 /* Reference superscripts in text */
@@ -28,8 +29,9 @@
     right: calc(-1 * (var(--sidenote-width) + 30px));
     width: var(--sidenote-width);
     font-family: var(--font-sans);
-    box-sizing: border-box; /* Move up to align with first paragraph */
-    margin-top: -1.5rem;
+    box-sizing: border-box;
+    /* Move up to align with first paragraph */
+    margin-top: -5rem;
 }
 
 .sidenotes-container h3 {
@@ -86,11 +88,12 @@
 
 /* Hover effect for desktop */
 @media (min-width: 1051px) {
-    .sidenote-ref:hover + .sidenote,
+
+    .sidenote-ref:hover+.sidenote,
     .sidenote:hover {
         opacity: 1;
     }
-    
+
     .sidenote-ref:hover {
         color: var(--color-dark);
         cursor: pointer;
@@ -107,17 +110,17 @@
     .sidenote {
         display: none;
     }
-    
+
     .sidenotes-container {
         display: none;
     }
-    
+
     .sidenote-ref {
         color: var(--sidenote-ref-color);
         text-decoration: none;
         cursor: pointer;
     }
-    
+
     .sidenote-ref:target {
         color: var(--color-dark);
     }
