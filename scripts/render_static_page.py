@@ -1,6 +1,7 @@
 import os
 import shutil
 import markdown
+from inline_footnotes_plugin import InlineFootnotesExtension
 from jinja2 import Environment, FileSystemLoader
 from utils import format_date
 from config import BlogConfig
@@ -34,6 +35,10 @@ def render_static_page(
     md = markdown.Markdown(
         extensions=[
             "extra",
+            "codehilite",
+            "fenced_code",
+            InlineFootnotesExtension(),
+            "markdown_captions",
         ]
     )
 

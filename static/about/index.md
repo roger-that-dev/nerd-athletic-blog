@@ -11,7 +11,7 @@ Welcome to Pythonic Ramblings, the blog where we take Python programming way too
 
 ### The Python Whisperer
 
-I'm not just a Python developer—I'm a Python whisperer. I can make sense of tracebacks that would make lesser developers cry. My superpower? Turning "it works on my machine" into "it works on your machine too, probably."
+I'm not just a Python developer—I'm a Python whisperer. I can make sense of tracebacks that would make lesser developers cry. My superpower? Turning "it works on my machine" into "it works on your machine too, probably."[^1]
 
 ### Why Python?
 
@@ -85,3 +85,9 @@ If you want to talk Python, share debugging war stories, or just need someone to
 - Twitter: @debugging_duck
 
 Remember: In Python we trust, all others we debug.
+
+---
+
+## Footnotes
+
+[^1]: Test note.
