@@ -2,6 +2,7 @@ import os
 import shutil
 import markdown
 from inline_footnotes_plugin import InlineFootnotesExtension
+from l2m4m import LaTeX2MathMLExtension
 from jinja2 import Environment, FileSystemLoader
 from utils import format_date
 from config import BlogConfig
@@ -39,6 +40,7 @@ def render_static_page(
             "fenced_code",
             InlineFootnotesExtension(),
             "markdown_captions",
+            LaTeX2MathMLExtension(),
         ]
     )
 

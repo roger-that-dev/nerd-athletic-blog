@@ -9,6 +9,7 @@ tags:
 - api
 - web-development
 title: Building a REST API with FastAPI
+image: test.png
 ---
 
 # Building a REST API with FastAPI

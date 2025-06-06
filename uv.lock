@@ -8,8 +8,10 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "jinja2" },
+    { name = "l2m4m" },
     { name = "markdown" },
     { name = "markdown-captions" },
+    { name = "markdown-emdash" },
     { name = "pillow" },
     { name = "pygments" },
     { name = "python-frontmatter" },
@@ -20,8 +22,10 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "jinja2", specifier = ">=3.1.3" },
+    { name = "l2m4m", specifier = ">=1.0.4" },
     { name = "markdown", specifier = ">=3.5.2" },
     { name = "markdown-captions", specifier = ">=2.1.2" },
+    { name = "markdown-emdash", specifier = ">=0.2.0" },
     { name = "pillow", specifier = ">=10.2.0" },
     { name = "pygments", specifier = ">=2.17.2" },
     { name = "python-frontmatter", specifier = ">=1.1.0" },
@@ -42,6 +46,28 @@ wheels = [
 ]
 
 [[package]]
+name = "l2m4m"
+version = "1.0.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "latex2mathml" },
+    { name = "markdown" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1d/71/2548c288ef1b27f3419285e45430b8f10b9be8f4c34b4d2ecec2d34baf42/l2m4m-1.0.4.tar.gz", hash = "sha256:7fc451edb281604c1eb9d6fa626a8cce874e8a0d3641cca581c20b7544f51396", size = 16567 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f6/8a/500639fe4b0b1dfc7775633b9173d96a474bbc0811578e916595c9b323f0/L2M4M-1.0.4-py3-none-any.whl", hash = "sha256:766e232b28cfdc6397e9c47162a938dba26e5ab90bddec8d82eccb7896ab46d1", size = 14985 },
+]
+
+[[package]]
+name = "latex2mathml"
+version = "3.78.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/69/33/ad2c3929494ad160f5130ea132ca298627a6c81c70be6bedd1bc806b5b01/latex2mathml-3.78.0.tar.gz", hash = "sha256:712193aa4c6ade1a8e0145dac7bc1f9aafbd54f93046a2356a7e1c05fa0f8b31", size = 73737 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1e/fd/aba08bb9e527168efad57985d7db9a853eb2384b1efa5ca5f3a3794c9cef/latex2mathml-3.78.0-py3-none-any.whl", hash = "sha256:1aeca3dc027b3006ad7b301b7f4a15ffbb4c1451e3dc8c3389e97b37b497e1d6", size = 73673 },
+]
+
+[[package]]
 name = "markdown"
 version = "3.8"
 source = { registry = "https://pypi.org/simple" }
@@ -58,6 +84,15 @@ dependencies = [
     { name = "markdown" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/81/1d/15ef64ed904c85d0520d632ec6844b7da886a45b0cb7970644be493181d0/markdown-captions-2.1.2.tar.gz", hash = "sha256:1c3ec0b674dd41a4c5f125724188c32a17bd46fd527db29f0c55a001e2d7abaf", size = 3031 }
+
+[[package]]
+name = "markdown-emdash"
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/82/68/ad594d8f09a9bc37958d729fd7986d4e17e5fc92b39c2b40d78ec3cf4c7e/markdown-emdash-0.2.0.tar.gz", hash = "sha256:410cb8797e5b35c39f0b6a3671903d451f201447af141866656abd7ed0712574", size = 2707 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c6/ad/ae6d00aa1508aebe8ad121ec009e6ded59b1cf1e39373cc43e5f9ba8c658/markdown_emdash-0.2.0-py3-none-any.whl", hash = "sha256:6d2380310f460e865154f8bc6b77e38cd263833a74e0235c147593de1d434b83", size = 2783 },
+]
 
 [[package]]
 name = "markupsafe"

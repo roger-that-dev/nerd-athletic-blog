@@ -55,3 +55,33 @@ def extract_image_filenames(md_content: str) -> List[str]:
         for m in matches
         if not m.startswith("http") and not m.startswith("https")
     ]
+
+
+def extract_script_filenames(md_content: str) -> List[str]:
+    """Extract all local JavaScript filenames from script tags in markdown content.
+
+    This function finds all script references in markdown content and returns
+    only those that reference local files (not URLs).
+
+    Args:
+        md_content: The markdown content to search for script tags.
+
+    Returns:
+        List[str]: A list of local JavaScript filenames found in the markdown.
+                  URLs (starting with http/https) are excluded.
+
+    Example:
+        >>> content = '<script src="script.js"></script> <script src="https://example.com/script.js"></script>'
+        >>> extract_script_filenames(content)
+        ['script.js']
+    """
+    # Matches <script src="filename.js"></script>
+    pattern = r'<script\s+src="([^"]+)"[^>]*></script>'
+    matches = re.findall(pattern, md_content)
+
+    # Only return local scripts (not http/https)
+    return [
+        m
+        for m in matches
+        if not m.startswith("http") and not m.startswith("https")
+    ]

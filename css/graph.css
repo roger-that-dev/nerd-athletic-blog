@@ -1,0 +1,41 @@
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto 1em auto;
+}
+
+@media (max-width: 600px) {
+    .chart-container {
+        padding: 0 8px;
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider-label {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.slider-value {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #666;
+}

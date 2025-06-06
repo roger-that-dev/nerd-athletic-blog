@@ -56,7 +56,7 @@ class Post(Content):
             author=meta.get("author", ""),
             slug=slug,
             reading_time=get_reading_time(content),
-            image=get_image(content, file_path),
+            image=get_image(content, file_path, meta),
             image_alt=meta.get("image_alt", ""),
             url=(
                 f"/post/{date_val.strftime('%Y')}/"
@@ -124,8 +124,16 @@ def get_reading_time(content):
     return str(minutes)
 
 
-def get_image(content, post_path):
-    """Return the first valid image filename found in the content."""
+def get_image(content, post_path, meta=None):
+    """Return the image filename, either from front matter or the first valid image in content."""
+    # First check if image is specified in front matter
+    if meta and meta.get("image"):
+        post_dir = os.path.dirname(post_path)
+        image_path = meta.get("image")
+        if os.path.exists(os.path.join(post_dir, image_path)):
+            return image_path
+
+    # Fall back to finding first image in content
     post_dir = os.path.dirname(post_path)
     return next(
         (

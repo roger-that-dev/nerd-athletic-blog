@@ -13,10 +13,12 @@ dependencies = [
     "jinja2>=3.1.3",
     "python-slugify>=8.0.4",
     "markdown-captions>=2.1.2",
+    "L2M4M>=1.0.4",
     "pygments>=2.17.2",
     "Pillow>=10.2.0",
     "python-frontmatter>=1.1.0",
     "pyyaml>=6.0.1",
+    "markdown-emdash>=0.2.0",
 ]
 
 [build-system]

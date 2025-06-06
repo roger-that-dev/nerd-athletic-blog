@@ -4,12 +4,35 @@ import markdown
 from jinja2 import Environment, FileSystemLoader
 from slugify import slugify
 from inline_footnotes_plugin import InlineFootnotesExtension
+from l2m4m import LaTeX2MathMLExtension
 from config import BlogConfig
-from utils import format_date, extract_image_filenames
+from mdx_emdash import EmDashExtension
+from utils import format_date, extract_image_filenames, extract_script_filenames
 
 
 def slugify_title(title):
     return slugify(title)
+
+
+def copy_asset(asset_name, post_dir, out_dir, post_path, asset_type="Image"):
+    """Copy an asset file from source to destination directory.
+
+    Args:
+        asset_name: Name of the asset file
+        post_dir: Source directory containing the asset
+        out_dir: Destination directory for the asset
+        post_path: Path to the post file (for error messages)
+        asset_type: Type of asset (for error messages)
+    """
+    asset_path = os.path.join(post_dir, asset_name)
+    out_asset_path = os.path.join(out_dir, os.path.basename(asset_name))
+    if os.path.exists(asset_path):
+        shutil.copy2(asset_path, out_asset_path)
+    else:
+        print(
+            f"WARNING: {asset_type} '{asset_name}' not \
+                found for post '{post_path}'"
+        )
 
 
 def render_post(
@@ -26,18 +49,23 @@ def render_post(
     # Create index.html file
     out_path = os.path.join(out_dir, "index.html")
 
-    # Handle images:
-    # Extract image filenames, copy them to output, warn if missing.
+    # Handle front matter image if it exists
+    if post.image:
+        copy_asset(
+            post.image,
+            post_dir,
+            out_dir,
+            post.source_path,
+            "Front matter image",
+        )
+
+    # Handle images in content:
     for img_name in extract_image_filenames(post.content):
-        img_path = os.path.join(post_dir, img_name)
-        out_img_path = os.path.join(out_dir, os.path.basename(img_name))
-        if os.path.exists(img_path):
-            shutil.copy2(img_path, out_img_path)
-        else:
-            print(
-                f"WARNING: Image '{img_name}' not \
-                    found for post '{post.source_path}'"
-            )
+        copy_asset(img_name, post_dir, out_dir, post.source_path, "Image")
+
+    # Handle JavaScript files:
+    for script_name in extract_script_filenames(post.content):
+        copy_asset(script_name, post_dir, out_dir, post.source_path, "Script")
 
     # Convert markdown to HTML with code highlighting and custom side notes.
     md = markdown.Markdown(
@@ -47,6 +75,8 @@ def render_post(
             "fenced_code",
             InlineFootnotesExtension(),
             "markdown_captions",
+            LaTeX2MathMLExtension(),
+            EmDashExtension(),
         ]
     )
 

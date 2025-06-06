@@ -46,14 +46,16 @@
 }
 
 /* Individual sidenote */
+/* See https://denisdefreyne.com/notes/pl7mf-f7mfk-frzxr/ */
 .sidenote {
     font-size: 0.85rem;
     line-height: 1.5;
     color: var(--sidenote-text-color);
-    margin-bottom: 0;
-    position: absolute;
     width: var(--sidenote-width);
-    right: calc(-1 * (var(--sidenote-width) + var(--sidenote-offset)));
+    float: right;
+    clear: both;
+    margin-right: calc(-1 * (var(--sidenote-width) + var(--sidenote-offset)));
+    margin-bottom: var(--sidenote-spacing);
     opacity: 0.4;
     transition: opacity 0.2s ease;
     font-family: var(--font-sans);
