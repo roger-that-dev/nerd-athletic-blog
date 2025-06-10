@@ -2,11 +2,18 @@
 #    uv pip compile pyproject.toml -o requirements.txt
 jinja2==3.1.6
     # via blog (pyproject.toml)
+l2m4m==1.0.4
+    # via blog (pyproject.toml)
+latex2mathml==3.78.0
+    # via l2m4m
 markdown==3.8
     # via
     #   blog (pyproject.toml)
+    #   l2m4m
     #   markdown-captions
 markdown-captions==2.1.2
+    # via blog (pyproject.toml)
+markdown-emdash==0.2.0
     # via blog (pyproject.toml)
 markupsafe==3.0.2
     # via jinja2

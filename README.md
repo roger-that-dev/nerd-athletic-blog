@@ -36,6 +36,8 @@ The project uses:
 
 Key dependencies:
 
+- `l2m4m` and `latex2mathml` - For maths support
+- `markdown-emdash` - For em-dash support
 - `markdown` - For Markdown processing
 - `jinja2` - For template rendering
 - `python-slugify` - For URL slug generation
@@ -138,9 +140,7 @@ blog/
 ### Todo
 
 * Post page
-    * Author hyperlink doesn't go anywhere.
     * Some other post markdown styles are missing probably.
-    * Mobile mode - all fonts need to be a bit smaller.
 * CSS
     * Remove duplicate CSS styles.
     * Clean up the CSS so it is properly categorised.
