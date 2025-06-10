@@ -47,4 +47,4 @@ def generate_favicon(initials: str) -> None:
 
 
 if __name__ == "__main__":
-    generate_favicon("AB")
+    generate_favicon("NA")
