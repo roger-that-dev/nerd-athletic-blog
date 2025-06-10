@@ -151,8 +151,6 @@ Individual differences in $CS$ and $D'$ become apparent when comparing athletes.
 
 Another athlete might have a higher $CS$ but lower $D'$, excelling at longer, steady-state efforts like 5km or 10km races where aerobic capacity dominates. Their training might emphasise developing power and anaerobic capacity to improve their finishing kick and ability to handle pace changes.
 
-Understanding these differences is crucial because it means that training above $CS$ feels fundamentally different from training below it. Training above $CS$ is metabolically stressful --- you're accumulating lactate and other byproducts, your muscle pH is dropping, and your muscles are dealing with an increasingly hostile internal environment. Training below $CS$ isn't easy either, but you're tired for different reasons. The fatigue comes from sustained aerobic effort rather than metabolic acidosis, and recovery follows different patterns.
-
 ## Applications for Training
 
 Again, it's important to note that $CS$ is not a training pace. It's a boundary. Training exactly at $CS$ isn't ideal because you'll likely oscillate between sustainable and unsustainable states due to the inherent error in estimating it. Instead, you should train either some percentage above or below $CS$ depending on your goals.
@@ -167,9 +165,9 @@ Perhaps most practically, critical speed can be used to establish training zones
 
 ## Limitations of the Model
 
-Sadly, the model has some clear limitations. It predicts that you can run indefinitely at $CS$ and infinitely fast at very short durations! Thish is obviously false. Exercise physiologists therefore recommend using the model only for durations between 2 to 30 minutes.
+The model predicts you can run indefinitely at $CS$ and infinitely fast at very short durations! Thish is obviously false. Exercise physiologists therefore recommend using the model only for durations between 2 to 30 minutes.
 
-The model also doesn't account for several important factors that affect real-world performance. Environmental conditions like heat, humidity, and altitude can significantly impact your ability to maintain certain speeds. Terrain variations such as hills, trails, or track surfaces also influence performance in ways the model doesn't capture. Fatigue from previous training sessions, psychological factors like motivation and mental state, and technical aspects of running form and efficiency are all elements that can affect your actual performance compared to what the model predicts.
+The model also doesn't account for several important factors that affect real-world performance. Environmental conditions like heat, humidity, and altitude can significantly impact your ability to maintain certain speeds. Terrain variations such as hills[^11], trails, or track surfaces also influence performance in ways the model doesn't capture. Fatigue from previous training sessions, psychological factors like motivation and mental state, and technical aspects of running form and efficiency are all elements that can affect your actual performance compared to what the model predicts.
 
 Despite these limitations, the model is still valuable because it provides a framework for understanding the relationship between speed and duration. It's not perfect, but it's better than having no model at all, and it gives us a foundation for making informed training decisions.
 
@@ -207,6 +205,8 @@ In the next post, we'll dive into how to calculate critical speed from your trai
 
 [^9]: While critical speed represents a precise physiological boundary in theory, in practice we can only estimate it within certain error bounds. Rather than trying to train exactly at this theoretical point (or our estimation of it), it's more practical to define ranges above and below it. This way, we can be confident we're training either aerobically (below CS) or anaerobically (above CS), without worrying about hitting an exact pace that we can never know with perfect accuracy. I'll touch on this more in the in the post about training using critical speed.
 
-[^10]: For example, Jakob Ingebrigtsen often employs a negative split strategy in his 5km races, starting conservatively for the first 8-9 laps before treating the final laps like a 1500m race. This effectively transforms the race duration massively in his favour, allowing for a stronger finish. If Jakub runs the first few laps below critical speed then his whole $D'$ remains as he winds the pace up close to the end of the race. This only works for Jakub because his critical speed is higher than the other athletes --- his aerobic system is a powerhouse!
+[^10]: For example, [Jakob Ingebrigtsen](https://worldathletics.org/athletes/norway/jakob-ingebrigtsen-14653717) often employs a negative split strategy in his 5km races, starting conservatively for the first 8-9 laps before treating the final laps like a 1500m race. This effectively transforms the race duration massively in his favour, allowing for a stronger finish. If Jakob runs the first few laps below critical speed then his whole $D'$ remains as he winds the pace up close to the end of the race. This only works for Jakub because his critical speed is higher than the other athletes --- his aerobic system is a powerhouse!
+
+[^11]: When estimating critical speed via training data, using an effort adjusted pace as input to the model takes account of hills and potentially other factors like wind and running surface. 
 
 
