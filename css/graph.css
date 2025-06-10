@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .chart-container {
     display: flex;
     justify-content: center;
@@ -9,7 +13,11 @@
 
 @media (max-width: 600px) {
     .chart-container {
-        padding: 0 8px;
+        padding: 0;
+        max-width: none;
+        width: calc(100% + 60px);
+        margin-left: -15px;
+        margin-right: 0px;
     }
 }
 

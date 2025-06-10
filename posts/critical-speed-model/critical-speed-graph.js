@@ -54,7 +54,7 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
         .range([height, 0]);
 
     // Create axes and grid
-    const xTickValues = [60, 120, 240, 600, 1200, 1800];
+    const xTickValues = [60, 120, 180, 300, 600, 900, 1200, 1800];
 
     // X Axis
     svg.append("g")
