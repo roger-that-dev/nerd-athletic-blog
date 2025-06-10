@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial parameters for the critical speed model
     const initialCS = 3.5;           // Critical Speed in m/s (about 12.6 km/h)
     const initialD = 250;            // D' in meters (distance that can be covered above critical speed)
-
     // Create the graph
     const graph = createCriticalSpeedGraph('critical-speed-chart', initialCS, initialD);
 
@@ -23,31 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
         dValue.textContent = newD + " m";
         graph.update(parseFloat(csSlider.value), newD);
     });
-
-    // Add legend
-    const legend = d3.select("#legend")
-        .selectAll("div")
-        .data([
-            { label: "Model Curve", color: "#1f77b4" },
-            { label: "Critical Speed", color: "#ff7f0e" }
-        ])
-        .enter()
-        .append("div")
-        .style("display", "flex")
-        .style("align-items", "center")
-        .style("margin-bottom", "5px");
-
-    legend.append("div")
-        .style("width", "18px")
-        .style("height", "18px")
-        .style("background", d => d.color)
-        .style("margin-right", "6px")
-        .style("border-radius", "3px");
-
-    legend.append("span")
-        .style("font", "13px Georgia, serif")
-        .style("color", "#333")
-        .text(d => d.label);
 });
 
 // Function to create a new critical speed graph
@@ -59,12 +33,13 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
     const width = svgWidth - margin.left - margin.right;
     const height = svgHeight - margin.top - margin.bottom;
     const maxTime = 1800;   // 30 minutes in seconds
+    const maxSpeed = 12;
 
     // Set up SVG with viewBox and responsive sizing
     const svg = d3.select(`#${containerId}`)
         .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`)
         .attr("width", "100%")
-        .attr("height", "auto")
+        .attr("height", "100%")
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -138,7 +113,7 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
     svg.append("text")
         .attr("class", "chart-title")
         .attr("x", width / 2)
-        .attr("y", -10)
+        .attr("y", -30)
         .attr("text-anchor", "middle")
         .attr("font-family", "Georgia, serif")
         .attr("font-size", 16)
@@ -149,20 +124,20 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
     const path = svg.append("path")
         .attr("class", "critical-speed-line")
         .attr("fill", "none")
-        .attr("stroke", "#1f77b4")
+        .attr("stroke", "#2A9D8F")
         .attr("stroke-width", 3);
 
     // Create CS line
     const csLine = svg.append("line")
         .attr("class", "cs-line")
-        .attr("stroke", "#ff7f0e")
+        .attr("stroke", "#FF6B35")
         .attr("stroke-width", 2)
         .attr("stroke-dasharray", "3,1");
 
     // Create CS label
     const csLabel = svg.append("text")
         .attr("class", "cs-label")
-        .attr("fill", "#ff7f0e")
+        .attr("fill", "#FF6B35")
         .attr("font-size", 12)
         .attr("font-family", "Georgia, serif");
 
@@ -240,12 +215,18 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
             updateCursor(mouseX);
         });
 
+    // Store current values
+    let currentCS = initialCS;
+    let currentD = initialD;
+    let initialTime = currentD / (maxSpeed - currentCS); // Store initialTime for cursor clamping
+
     // Function to update cursor elements
     function updateCursor(mouseX) {
         const time = x.invert(mouseX);
-        const rawSpeed = currentCS + (currentD / time);
-        const speed = Math.min(rawSpeed, 12);
-        const xCurve = mouseX;
+        const clampedTime = Math.max(time, initialTime, 0.01);
+        const rawSpeed = currentCS + (currentD / clampedTime);
+        const speed = Math.min(rawSpeed, maxSpeed);
+        const xCurve = x(clampedTime);
         const yCurve = y(speed);
         const yCS = y(currentCS);
 
@@ -290,10 +271,6 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
             .attr("fill", "#d90429");
     }
 
-    // Store current values
-    let currentCS = initialCS;
-    let currentD = initialD;
-
     // Return an object with the update method and necessary elements
     const graph = {
         update: function (newCS, newD) {
@@ -301,7 +278,7 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
             currentD = newD;
 
             // Start with speed = 12 m/s and find the corresponding time
-            const initialSpeed = 12;
+            const initialSpeed = maxSpeed;
             const initialTime = newD / (initialSpeed - newCS);
 
             // Generate time points

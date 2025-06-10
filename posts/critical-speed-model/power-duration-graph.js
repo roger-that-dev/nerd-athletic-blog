@@ -8,7 +8,7 @@ function createPowerDurationGraph(containerId) {
     // Set up SVG with viewBox and responsive sizing
     const svgWidth = 600;
     const svgHeight = 400;
-    const margin = { top: 40, right: 50, bottom: 40, left: 50 };
+    const margin = { top: 50, right: 50, bottom: 50, left: 50 };
     const width = svgWidth - margin.left - margin.right;
     const height = svgHeight - margin.top - margin.bottom;
 
@@ -98,7 +98,7 @@ function createPowerDurationGraph(containerId) {
         .attr("class", "axis-label")
         .attr("text-anchor", "middle")
         .attr("x", width / 2)
-        .attr("y", height + margin.bottom - 5)
+        .attr("y", height + margin.bottom - 15)
         .attr("fill", "#000")
         .attr("font-size", 12)
         .attr("font-weight", "bold")
@@ -109,41 +109,19 @@ function createPowerDurationGraph(containerId) {
     svg.append("text")
         .attr("class", "chart-title")
         .attr("x", width / 2)
-        .attr("y", -10)
+        .attr("y", -30)
         .attr("text-anchor", "middle")
         .attr("font-family", "Georgia, serif")
         .attr("font-size", 16)
         .attr("font-weight", "bold")
         .text("Power Duration Curve");
 
-    // Create path for the power duration curve
+    // Create path for the power-duration curve
     const path = svg.append("path")
         .attr("class", "power-duration-line")
         .attr("fill", "none")
-        .attr("stroke", "#1f77b4")
+        .attr("stroke", "#2A9D8F")
         .attr("stroke-width", 3);
-
-    // Create elements for cursor tracking
-    const cursorGroup = svg.append("g")
-        .attr("class", "cursor-group")
-        .style("display", "none");
-
-    // Vertical line
-    const cursorLine = cursorGroup.append("line")
-        .attr("stroke", "#d90429")
-        .attr("stroke-width", 1);
-
-    // Horizontal line
-    const cursorHorizontalLine = cursorGroup.append("line")
-        .attr("stroke", "#d90429")
-        .attr("stroke-width", 1);
-
-    // Add circle indicator
-    const cursorCircle = cursorGroup.append("circle")
-        .attr("r", 4)
-        .attr("fill", "#d90429")
-        .attr("stroke", "white")
-        .attr("stroke-width", 1.5);
 
     // Add a top axis with no tick marks or labels for a clean top border
     svg.append("g")

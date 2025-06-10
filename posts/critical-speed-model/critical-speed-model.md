@@ -1,22 +1,22 @@
 ---
 date: 2025-06-03
 author: Roger Willis
-tags: [running, physiology, critical-speed]
+tags: [physiology, critical-speed, research, performance]
 title: Introducing Critical Speed
 excerpt: A comprehensive introduction to the critical speed model, a powerful tool for runners to understand their physiological limits and optimise their training.
 series: critical speed
+image: formula.png
 ---
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="critical-speed-graph.js"></script>
 <script src="power-duration-graph.js"></script>
+<script src="anaerobic-aerobic-graph.js"></script>
 <link rel="stylesheet" href="/css/graph.css" />
 
-Have you ever wondered why you can maintain your 10km pace for much longer than your 5km pace? Or why some runners seem to excel at shorter, high-intensity efforts while others dominate the longer distances? The answer lies in a piece of exercise physiology called critical speed --- a concept that's been quietly revolutionising how we understand running performance.
+Have you ever wondered why you can maintain your 10km pace for much longer than your 5km pace? Or why some runners seem to excel at shorter, high-intensity efforts while others dominate the longer distances? The answer lies in a piece of exercise physiology called critical speed --- a fundamental concept in modern exercise physiology that deserves thorough exploration. For me to really get into it, I'll break the topic up into a series of focused posts:
 
-Critical speed is a fundamental concept in modern exercise physiology that deserves thorough exploration and for me to really get into it, I'll break the topic up into a series of focused posts:
-
-1. Introducing critical speed
+1. [Introducing critical speed](/post/2025/06/03/introducing-critical-speed/) (you're reading this now!)
 2. How to calculate critical speed 
 3. The physiology of critical speed
 4. Training using critical speed
@@ -38,7 +38,7 @@ I'm interested in critical speed because I want to use it as the basis for perso
 
 Before we dive into critical speed, we need to understand its older sibling: critical power. The concept was first introduced in a paper[^2] back in 1965 by Monod and Scherrer, who investigated the relationship between the maximum amount of muscular work that could be performed for various lengths of time. This foundational research laid the groundwork for our modern understanding of how energy systems interact during sustained exercise.
 
-Critical power is one way to estimate what exercise physiologists call the maximal metabolic steady state[^3] or MMSS - the true physiological boundary which separates stable and unstable metabolic states. While MMSS is the actual physiological parameter we're trying to measure, critical power is just one of several methods we can use to estimate it. Other estimation methods include the lactate threshold and maximal lactate steady state (MLSS). Think of MMSS as the "true" boundary we're trying to find, and critical power as one of the tools we use to locate it.
+Critical power is one way to estimate what exercise physiologists call the maximal metabolic steady state[^3] or MMSS --- the true physiological boundary which separates stable and unstable metabolic states. While MMSS is the actual physiological parameter we're trying to measure, critical power is just one of several methods we can use to estimate it. Other estimation methods include the lactate threshold and maximal lactate steady state (MLSS). Think of MMSS as the "true" boundary we're trying to find, and critical power as one of the tools we use to locate it.
 
 The reason why I'm writing a whole article series on critical speed and not the lactate threshold or MLSS is because critical speed is [considered the best way](https://physoc.onlinelibrary.wiley.com/doi/10.14814/phy2.14098) to estimate MMSS. From the linked paper abstract:
 
@@ -65,33 +65,25 @@ This is where critical speed comes in. Instead of trying to measure power, we us
 
 In practical training terms, critical speed serves as the boundary between training zones 3 and 4[^5] in a typical 5 zone system and represnts an intensity that most athletes can maintain for about 15 to 30 minutes. 
 
-The variability in this duration range is actually quite revealing --- it exists because (as mentioned above) critical speed is an estimate of your true MMSS, not the parameter itself. This variability has important implications. If you underestimate your critical speed, you'll find you can maintain it for longer periods than expected. Overestimate it, and you'll fade much quicker than anticipated. Hence the reported variability. There's also the concept of [durability](https://www.endureiq.com/blog/durability-a-key-endurance-performance-characteristic-and-something-to-consider-in-training) which comes into play, where speed falls over time (and at different rates depending on the athlete) despite a constant metabolic effort.
-
-## Intuition Behind the Model
-
-The relationship between speed and duration is something every runner understands instinctively. Run faster, and you can't maintain it as long. Run slower, and you can keep going much further. It's such basic knowledge that we rarely stop to think about the physiological machinery that makes this possible.
-
-What the critical speed model does is formalise this understanding into a simple mathematical framework. It captures how your body's two primary energy systems, aerobic and anaerobic, work together to fuel your running. Think of it like driving a modern hybrid car with both a main fuel tank and a small-sized battery. Your aerobic system is like that main fuel tank. It can keep you going for long distances and has a maximum output, like your car's engine having a top sustainable RPM.
-
-Your anaerobic system is like the hybrid battery. It can give you extra power when you need it, but it's limited in capacity. You can choose to use all that battery power at once for a quick burst of speed, or spread it out over the duration of your journey to maintain a slightly higher pace throughout. When you stop or slow down significantly, that battery can recharge, just like how your anaerobic system can recover during rest or very easy running.
+The variability in this duration range is actually quite revealing --- it exists because (as mentioned above) critical speed is an estimate of your true MMSS, not the parameter itself. This variability has important implications. If you underestimate your critical speed, you'll find you can maintain it for longer periods than expected. Overestimate it, and you'll fade much quicker than anticipated. Hence the reported variability[^6]. There's also the concept of [durability](https://www.endureiq.com/blog/durability-a-key-endurance-performance-characteristic-and-something-to-consider-in-training) which comes into play, where speed falls over time (and at different rates depending on the athlete) despite a constant metabolic effort.
 
 ## The Model Formula
 
-The critical speed model defines a hyperbolic[^6] relationship between the maximum speed you can maintain for any running duration. As speed increases, duration must decrease, and this relationship follows a predictable mathematical pattern:
+The critical speed model defines a hyperbolic[^7] relationship between the maximum speed you can maintain for any running duration. As speed increases, duration must decrease, and this relationship follows a predictable mathematical pattern:
 
 $$t_{lim} = \frac{D'}{s - CS}$$
 
 Where $s$ is running speed, and $t_{lim}$ is the "time limit" you can sustain a given speed. $CS$ and $D'$ are two parameters that vary from one runner to another, and which can change as your fitness level increases or declines.
 
-The first parameter, $CS$[^7] (measured in metres per second), is the asymptote that the curve approaches and represents the boundary between sustainable and unsustainable paces. Viewing critical speed as a boundary is crucial. It's not a pace you should train at[^8]. If you try to run _at_ critical speed then you are likely to get unpredictable results.
+The first parameter, $CS$[^8] (measured in metres per second), is the asymptote that the curve approaches and represents the boundary between sustainable and unsustainable paces. Viewing critical speed as a boundary is crucial. It's not a pace you should train at[^9]. If you try to run _at_ critical speed then you are likely to get unpredictable results.
 
-The second parameter, $D'$ (pronounced "D prime"), is where things get interesting. It's measured in metres, which might seem odd at first, but there's a sensible reason for this. $D'$ represents the actual distance you can cover using your anaerobic energy system during an all-out effort. Think of it as your finite energy reserve. The extra distance you can travel even after you've reached the limits of your aerobic system and hit VO2max.
+The second parameter, $D'$ (pronounced "D prime"), is where things get interesting. It's measured in metres, which might seem odd at first, but there's a sensible reason for this. $D'$ represents the actual distance you can cover using your anaerobic energy system during an _all-out effort_ before you need to stop due to exhaustion. Think of it as your finite energy reserve. The extra distance you can travel even after you've reached the limits of your aerobic system and hit VO2max.
 
-When you're running at maximum effort, you're not just using your anaerobic system in isolation --- your aerobic system is still working at its maximum capacity too. The model encapsulates both systems working together, with $D'$ representing that extra metabolic power you can access even after you've reached VO2max and your muscles are using anaerobic processes to produce ATP.
+Recent research by [Burnley (2023)](https://www.sciencedirect.com/science/article/pii/S109564332300020X) has shown that $D'$ is remarkably consistent across different types of exercise, suggesting it represents a fundamental physiological limit rather than just a mathematical parameter. This makes the model even more powerful as a training tool.
+
+When you're running at maximum effort, you're not just using your anaerobic system in isolation --- your aerobic system is working at (or near to) its maximum capacity. The model encapsulates both systems working together, with $D'$ representing that extra metabolic power you can access even after you've reached VO2max and your muscles are using anaerobic processes to produce ATP.
 
 If you run at a pace just slightly above your critical speed, that finite energy reserve gets spread out over a longer duration. Run much faster, and you burn through it quickly, which is why very high speeds can only be maintained for short periods. 
-
-What surprised me when I first learned about this model was how small $D'$ typically is. I had always assumed that anaerobic energy played a much larger role in running performance, but the [data consistently shows](https://www.actioninsports.com/wp-content/uploads/2021/11/energy-system-contribution-in-track-running.pdf) that this finite reserve is relatively modest compared to our aerobic capacity. This small value actually tells us something profound about human physiology - we're primarily aerobic creatures, with our anaerobic system serving as a limited but powerful backup system.
 
 ## Visualising Critical Speed
 
@@ -125,15 +117,39 @@ When you increase the $D'$ parameter, watch how the curve becomes more pronounce
 
 ## Basic Physiology Behind the Model
 
+If you only remember one thing from this entire post, make it this section.
+
 The critical speed model reveals insights about how your body's energy systems operate during different intensities of exercise. At speeds below your critical speed, your body maintains what exercise physiologists call "metabolic equilibrium". Your heart rate finds a steady rhythm, your breathing settles into a sustainable pattern, and your energy production systems can keep pace with the demands you're placing on them. Most importantly, blood lactate levels remain stable, and you're primarily relying on aerobic energy pathways that can theoretically continue indefinitely.
 
-This is why you can maintain paces below critical speed for extended periods. Your body is in a true steady state. VO2 (oxygen consumption) stabilises, usually somewhere below your VO2max, and your muscles are efficiently using oxygen to produce ATP through aerobic metabolism (via fats or sugars). The metabolic byproducts produced at this intensity can be cleared as quickly as they're produced, preventing the accumulation that leads to fatigue.
+This is why you can maintain paces below critical speed for extended periods. Your body is in a true steady state. VO2 (oxygen consumption) stabilises, usually somewhere below your VO2max, and your muscles are efficiently using oxygen to produce ATP through aerobic metabolism (via fats or sugars). This is not to say that there's no anaerobic respiration at these speeds. There is. It's just that the metabolic byproducts produced at this intensity can be cleared as quickly as they're produced, preventing the accumulation that leads to fatigue.
 
-Above critical speed, the physiological picture changes dramatically. You begin accumulating metabolic byproducts faster than your body can clear them, blood lactate starts rising progressively amd muscle pH starts dropping. Your VO2 continues to rise toward its maximum and you're now operating in a metabolically unsustainable state, which is why you can't maintain these speeds indefinitely.
+Above critical speed, the physiological picture changes dramatically. You begin accumulating metabolic byproducts faster than your body can clear them, blood lactate starts rising progressively and muscle pH starts dropping. Your VO2 continues to rise toward its maximum. You're now operating in a metabolically unsustainable state.
 
-The individual differences in $CS$ and $D'$ becomes apparent when comparing athletes. Consider two runners with similar overall performance but different physiological profiles. One might have a lower $CS$ but a higher $D'$, making them naturally suited to shorter, more explosive efforts like 800m or 1500m races where the anaerobic contribution is significant. Their training would need to focus heavily on developing their aerobic base to raise their critical speed.
+This is the important thing to recognise with anaerobic metabolism. When running above critical speed, you don't need to stop because you _run out of energy_. You must stop because the build up of metabolic byproducts leads to exhaustion. After reaching exhaustion, if you stop for a few minutes, your muscles will recover and you can go again!
 
-Another athlete might have a higher $CS$ but lower $D'$, excelling at longer, steady-state efforts like 5km or 10km races where aerobic capacity dominates. Their training might emphasize developing power and anaerobic capacity to improve their finishing kick and ability to handle pace changes.
+If we graph aerobic and anaerobic contribution against duration, we see a curve that mirrors the critical speed graph --- a relationship that aligns perfectly with our understanding of critical speed:
+
+* For very short events like the 100m, the aerobic system barely has time to activate before the race ends, making anaerobic contribution dominant.
+* As duration increases, the anaerobic contribution becomes progressively smaller in percentage terms, not because less is used, but because the aerobic contribution grows substantially larger. 
+
+<figure>
+    <div class="chart-container">
+        <svg id="anaerobic-vs-aerobic-chart"></svg>
+    </div>
+    <figcaption>
+        Relative contribution of aerobic and anaerobic energy systems during maximal exercise. Data from <a href="https://www.researchgate.net/profile/Paul-Gastin/publication/11799339_Energy_System_Interaction_and_Relative_Contribution_During_Maximal_Exercise/links/0deec517cf3c25f8cf000000/Energy-System-Interaction-and-Relative-Contribution-During-Maximal-Exercise.pdf">Gastin (2001)</a>
+  </figcaption>
+</figure>
+
+The graph above and the critical speed model assumes an all-out effort and uniform pace throughout. However, race strategy can significantly impact this, potentially to your advantage[^10].
+
+What surprised me when I first learned about critical speed was how small $D'$ typically is. I had always assumed that anaerobic energy played a much larger role in running performance, but the [data](https://www.actioninsports.com/wp-content/uploads/2021/11/energy-system-contribution-in-track-running.pdf) [consistently shows](https://www.researchgate.net/profile/Paul-Gastin/publication/11799339_Energy_System_Interaction_and_Relative_Contribution_During_Maximal_Exercise/links/0deec517cf3c25f8cf000000/Energy-System-Interaction-and-Relative-Contribution-During-Maximal-Exercise.pdf) that this finite reserve is relatively modest compared to our aerobic capacity. This small value tells us something profound about human physiology --- we're primarily aerobic creatures, with our anaerobic system serving as a limited but powerful backup system.
+
+## Differences between athletes
+
+Individual differences in $CS$ and $D'$ become apparent when comparing athletes. Consider two runners with similar overall performance but different physiological profiles. One might have a lower $CS$ but a higher $D'$, making them naturally suited to shorter, more explosive efforts like 800m or 1500m races where the anaerobic contribution is significant. Their training would need to focus heavily on developing their aerobic base to raise their critical speed.
+
+Another athlete might have a higher $CS$ but lower $D'$, excelling at longer, steady-state efforts like 5km or 10km races where aerobic capacity dominates. Their training might emphasise developing power and anaerobic capacity to improve their finishing kick and ability to handle pace changes.
 
 Understanding these differences is crucial because it means that training above $CS$ feels fundamentally different from training below it. Training above $CS$ is metabolically stressful --- you're accumulating lactate and other byproducts, your muscle pH is dropping, and your muscles are dealing with an increasingly hostile internal environment. Training below $CS$ isn't easy either, but you're tired for different reasons. The fatigue comes from sustained aerobic effort rather than metabolic acidosis, and recovery follows different patterns.
 
@@ -141,17 +157,17 @@ Understanding these differences is crucial because it means that training above 
 
 Again, it's important to note that $CS$ is not a training pace. It's a boundary. Training exactly at $CS$ isn't ideal because you'll likely oscillate between sustainable and unsustainable states due to the inherent error in estimating it. Instead, you should train either some percentage above or below $CS$ depending on your goals.
 
-Training below $CS$ helps develop your aerobic system and improve your ability to maintain steady-state exercise. This is crucial for longer races and building endurance. Training above $CS$ helps develop your anaerobic system and improve your ability to handle higher intensities. This is important for shorter races and improving your speed. Organising your training as percentages of critical speed is also probably a better approach than a [percentage of VO2max or maximum heart rate](https://www.trainingpeaks.com/blog/what-is-the-best-workout-for-increasing-vo2-max/).
+Training below $CS$ helps develop your aerobic system and improve your ability to maintain steady-state exercise. This is crucial for longer races and building endurance. Training above $CS$ helps develop your anaerobic system and improve your ability to handle higher intensities. This is important for shorter races and improving your speed. Organising your training as percentages of critical speed is also probably a better approach than a [percentage of VO2max or maximum heart rate](https://training4endurance.co.uk/physiology-of-endurance/sustainable-percent-vo2max/).
 
 Recent [research](https://pmc.ncbi.nlm.nih.gov/articles/PMC8505327/) has determined that trianing at _any_ pace above your $CS$ results in an unsustainable metabolic state. Therefore, to improve your anaerobic system you don't need a specific training pace, any range above $CS$ will do.
 
-For monitoring training progress, tracking changes in $CS$ and $D'$ over time allows you to see concrete evidence of how your fitness is improving. When comparing athletes, $CS$ and $D'$ can help identify specific strengths and weaknesses --- one runner might have superior aerobic capacity while another excels in anaerobic power. The model also serves as a tool for predicting race performances, helping estimate potential race times at different distances based on your current physiological parameters.
+For monitoring training progress, tracking changes in $CS$ and $D'$ over time allows you to see concrete evidence of how your fitness is improving. The model also serves as a tool for predicting race performances, helping estimate potential race times at different distances based on your current physiological parameters.
 
 Perhaps most practically, critical speed can be used to establish training zones based on actual physiological boundaries rather than arbitrary percentages. This creates more personalised and effective training programs. Additionally, understanding the relationship between intensity and duration helps optimise recovery protocols, as you can better gauge the metabolic cost of different training sessions and plan appropriate rest periods.
 
 ## Limitations of the Model
 
-Sadly, the model has some clear limitations. It predicts that you can run indefinitely at $CS$ and infinitely fast at very short durations! Thish is obviously not true. Exercise physiologists therefore recommend using the model only for durations between 2 to 30 minutes.
+Sadly, the model has some clear limitations. It predicts that you can run indefinitely at $CS$ and infinitely fast at very short durations! Thish is obviously false. Exercise physiologists therefore recommend using the model only for durations between 2 to 30 minutes.
 
 The model also doesn't account for several important factors that affect real-world performance. Environmental conditions like heat, humidity, and altitude can significantly impact your ability to maintain certain speeds. Terrain variations such as hills, trails, or track surfaces also influence performance in ways the model doesn't capture. Fatigue from previous training sessions, psychological factors like motivation and mental state, and technical aspects of running form and efficiency are all elements that can affect your actual performance compared to what the model predicts.
 
@@ -175,7 +191,7 @@ In the next post, we'll dive into how to calculate critical speed from your trai
 
 [^1]: If you are familiar with [Roberto Canova-style](https://www.letsrun.com/forum/flat_read.php?thread=2959804) percentage based training then, for example, 5% slower than a 5km pace of 3:30min/km would be $210\times1.05=220.5$ and so adds 10 seconds to your pace, which would now be 3:40min/km.
 
-[^2]: A the paper an be found [here](https://www.tandfonline.com/doi/abs/10.1080/00140136508930810) and is worth a read. It's only within the last 15 years or so that the critical power model has come to the fore. 
+[^2]: The paper can be found [here](https://www.tandfonline.com/doi/abs/10.1080/00140136508930810) and is worth a read. It's only within the last 15 years or so that the critical power model has come to the fore. 
 
 [^3]: I'm going to write a separate article on the maximal metabolic steady state. 
 
@@ -183,8 +199,14 @@ In the next post, we'll dive into how to calculate critical speed from your trai
 
 [^5]: Though in most training zone schemes which use lactate threshold as the 3-4 boundary, critical speed would likely sit within the lower section of zone 4.
 
-[^6]: A hyperbolic relationship, in mathematics, describes a relationship between two variables where their product is a constant, resulting in a graph that resembles a hyperbola. Interestingly, in my day-job I often encounter another hyperbolic function --- the constant product market-maker function $a \times b = k$, which ensures that in a crypto trading pool, the product of the two tokens in the pool always remains the same. For example, if a pool starts with 100 token A and 100 token B, then $k = 10,000$. If someone trades 10 token A into the pool, the new balance might be 110 token A and ~90.9 token B (since $110 \times 90.9 ≈ 10,000$). This mechanism automatically determines prices based on the ratio of tokens in the pool, with prices becoming exponentially more expensive as you try to drain more of one token from the pool. In the case of critical speed, $speed \times time = distance$ and this distance remains constant regardless of how fast you run, which as we'll see later on in this post is quite an interesting result.
+[^6]: I'll show some analysis of the [powerof10](https://www.kaggle.com/datasets/goprogram/thepowerof10) dataset in a future post to demonstrate how we can estimate critical speed within some reasonable bounds given a 5km race time.
 
-[^7]: It's somewhat confusing that the model shares the same name as this asymptote, but understanding this distinction is crucial for proper interpretation.
+[^7]: A hyperbolic relationship, in mathematics, describes a relationship between two variables where their product is a constant, resulting in a graph that resembles a hyperbola. Interestingly, in my day-job I often encounter another hyperbolic function --- the constant product market-maker function $a \times b = k$, which ensures that in a crypto trading pool, the product of the two tokens in the pool always remains the same. For example, if a pool starts with 100 token A and 100 token B, then $k = 10,000$. If someone trades 10 token A into the pool, the new balance might be 110 token A and ~90.9 token B (since $110 \times 90.9 ≈ 10,000$). This mechanism automatically determines prices based on the ratio of tokens in the pool, with prices becoming exponentially more expensive as you try to drain more of one token from the pool. In the case of critical speed, $speed \times time = distance$ and this distance remains constant regardless of how fast you run, which as we'll see later on in this post is quite an interesting result.
 
-[^8]: While critical speed represents a precise physiological boundary in theory, in practice we can only estimate it within certain error bounds. Rather than trying to train exactly at this theoretical point (or our estimation of it), it's more practical to define ranges above and below it. This way, we can be confident we're training either aerobically (below CS) or anaerobically (above CS), without worrying about hitting an exact pace that we can never know with perfect accuracy. I'll touch on this more in the in the post about training using critical speed.
+[^8]: It's somewhat confusing that the model shares the same name as this asymptote, but understanding this distinction is crucial for proper interpretation.
+
+[^9]: While critical speed represents a precise physiological boundary in theory, in practice we can only estimate it within certain error bounds. Rather than trying to train exactly at this theoretical point (or our estimation of it), it's more practical to define ranges above and below it. This way, we can be confident we're training either aerobically (below CS) or anaerobically (above CS), without worrying about hitting an exact pace that we can never know with perfect accuracy. I'll touch on this more in the in the post about training using critical speed.
+
+[^10]: For example, Jakob Ingebrigtsen often employs a negative split strategy in his 5km races, starting conservatively for the first 8-9 laps before treating the final laps like a 1500m race. This effectively transforms the race duration massively in his favour, allowing for a stronger finish. If Jakub runs the first few laps below critical speed then his whole $D'$ remains as he winds the pace up close to the end of the race. This only works for Jakub because his critical speed is higher than the other athletes --- his aerobic system is a powerhouse!
+
+
