@@ -8,6 +8,7 @@ tags:
 - refactoring
 - best-practices
 title: The Art of Code Refactoring
+published: true
 ---
 
 # The Art of Code Refactoring

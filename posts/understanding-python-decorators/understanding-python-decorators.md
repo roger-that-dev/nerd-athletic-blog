@@ -8,6 +8,7 @@ tags:
 - decorators
 - advanced-python
 title: Understanding Python Decorators
+published: true
 ---
 
 # Understanding Python Decorators

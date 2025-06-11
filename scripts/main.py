@@ -39,6 +39,7 @@ class Post(Content):
     reading_time: str
     image: str
     image_alt: str
+    published: bool
 
     @classmethod
     def from_markdown(cls, file_path, meta, content):
@@ -58,6 +59,9 @@ class Post(Content):
             reading_time=get_reading_time(content),
             image=get_image(content, file_path, meta),
             image_alt=meta.get("image_alt", ""),
+            published=meta.get(
+                "published", True
+            ),  # Default to True for backward compatibility
             url=(
                 f"/post/{date_val.strftime('%Y')}/"
                 f"{date_val.strftime('%m')}/"
@@ -191,7 +195,9 @@ def main():
     copy_static_assets("css", "js")
 
     # Collect and render posts
-    posts = collect_markdown_files("posts", Post)
+    all_posts = collect_markdown_files("posts", Post)
+    # Filter out unpublished posts
+    posts = [post for post in all_posts if post.published]
     for post in posts:
         render_post(post, "templates/post.tmpl", web_root="web", config=config)
 

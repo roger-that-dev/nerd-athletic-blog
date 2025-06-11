@@ -8,6 +8,7 @@ tags:
 - demo
 - d3js
 title: Placeholder Post With D3.js Example
+published: false
 ---
 
 This is a placeholder post to demonstrate the structure and formatting of a typical blog entry. Below you'll find examples of images, lists, code blocks, blockquotes, footnotes, and even a D3.js graph embedded using inline JavaScript.

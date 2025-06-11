@@ -9,6 +9,7 @@ tags:
 - devops
 - containerization
 title: Docker for Python Developers
+published: true
 ---
 
 # Docker for Python Developers

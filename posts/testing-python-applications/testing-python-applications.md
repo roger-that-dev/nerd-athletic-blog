@@ -9,6 +9,7 @@ tags:
 - pytest
 - tdd
 title: Testing Python Applications
+published: true
 ---
 
 # Testing Python Applications
