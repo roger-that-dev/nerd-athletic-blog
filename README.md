@@ -12,4 +12,9 @@ If you want to get in touch then drop me an email:
 
     rojeee [at] gmail [dot] com
 
+## Todo
+
+1. Check accessibility of site when javascript is disabled (burger menu breaks and the inline notes probably)
+2. Tidy up the graph code and perhaps encapsulate the base graph as a web component
+
 
