@@ -120,7 +120,7 @@ function createPowerDurationGraph(containerId) {
     const path = svg.append("path")
         .attr("class", "power-duration-line")
         .attr("fill", "none")
-        .attr("stroke", "#2A9D8F")
+        .attr("stroke", "#1F3DFF")
         .attr("stroke-width", 3);
 
     // Add a top axis with no tick marks or labels for a clean top border

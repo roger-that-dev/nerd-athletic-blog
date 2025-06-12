@@ -124,20 +124,20 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
     const path = svg.append("path")
         .attr("class", "critical-speed-line")
         .attr("fill", "none")
-        .attr("stroke", "#2A9D8F")
+        .attr("stroke", "#1F3DFF")
         .attr("stroke-width", 3);
 
     // Create CS line
     const csLine = svg.append("line")
         .attr("class", "cs-line")
-        .attr("stroke", "#FF6B35")
+        .attr("stroke", "#E1341E")
         .attr("stroke-width", 2)
         .attr("stroke-dasharray", "3,1");
 
     // Create CS label
     const csLabel = svg.append("text")
         .attr("class", "cs-label")
-        .attr("fill", "#FF6B35")
+        .attr("fill", "#E1341E")
         .attr("font-size", 12)
         .attr("font-family", "Georgia, serif");
 
@@ -148,17 +148,17 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
 
     // Vertical line
     const cursorLine = cursorGroup.append("line")
-        .attr("stroke", "#d90429")
+        .attr("stroke", "#1FADFF")
         .attr("stroke-width", 1);
 
     // Horizontal line to CS
     const cursorHorizontalLine = cursorGroup.append("line")
-        .attr("stroke", "#d90429")
+        .attr("stroke", "#1FADFF")
         .attr("stroke-width", 1);
 
     // D' area
     const dArea = cursorGroup.append("rect")
-        .attr("fill", "#1f77b4")
+        .attr("fill", "#1FADFF")
         .attr("opacity", 0.2);
 
     // D' value label
@@ -170,7 +170,7 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
     // Add circle indicator
     const cursorCircle = cursorGroup.append("circle")
         .attr("r", 4)
-        .attr("fill", "#d90429")
+        .attr("fill", "#1FADFF")
         .attr("stroke", "white")
         .attr("stroke-width", 1.5);
 
@@ -241,7 +241,7 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
             .attr("x2", xCurve)
             .attr("y1", yCurve)
             .attr("y2", yCS)
-            .attr("stroke", "#d90429")
+            .attr("stroke", "#1FADFF")
             .attr("stroke-width", 2)
             .attr("stroke-dasharray", null);
 
@@ -251,7 +251,7 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
             .attr("x2", xCurve)
             .attr("y1", yCurve)
             .attr("y2", yCurve)
-            .attr("stroke", "#d90429")
+            .attr("stroke", "#1FADFF")
             .attr("stroke-width", 2)
             .attr("stroke-dasharray", null);
 
@@ -261,14 +261,14 @@ function createCriticalSpeedGraph(containerId, initialCS, initialD) {
             .attr("y", yCurve)
             .attr("width", xCurve)
             .attr("height", yCS - yCurve)
-            .attr("fill", "#d90429")
+            .attr("fill", "#1FADFF")
             .attr("opacity", 0.15);
 
         dLabel
             .attr("x", xCurve + 8)
             .attr("y", yCurve - 8)
             .text(`D' = ${currentD}m`)
-            .attr("fill", "#d90429");
+            .attr("fill", "#1FADFF");
     }
 
     // Return an object with the update method and necessary elements

@@ -5,6 +5,7 @@ tags: [physiology, critical-speed, research, performance]
 title: Introducing Critical Speed
 excerpt: A comprehensive introduction to the critical speed model, a powerful tool for runners to understand their physiological limits and optimise their training.
 series: critical speed
+published: true
 image: formula.png
 ---
 
@@ -187,7 +188,7 @@ In the next post, we'll dive into how to calculate critical speed from your trai
 
 ## Footnotes
 
-[^1]: If you are familiar with [Roberto Canova-style](https://www.letsrun.com/forum/flat_read.php?thread=2959804) percentage based training then, for example, 5% slower than a 5km pace of 3:30min/km would be $210\times1.05=220.5$ and so adds 10 seconds to your pace, which would now be 3:40min/km.
+[^1]: If you are familiar with [Renato Canova-style](https://www.letsrun.com/forum/flat_read.php?thread=2959804) percentage based training then, for example, 5% slower than a 5km pace of 3:30min/km would be $210\times1.05=220.5$ and so adds 10 seconds to your pace, which would now be 3:40min/km.
 
 [^2]: The paper can be found [here](https://www.tandfonline.com/doi/abs/10.1080/00140136508930810) and is worth a read. It's only within the last 15 years or so that the critical power model has come to the fore. 
 
@@ -205,7 +206,7 @@ In the next post, we'll dive into how to calculate critical speed from your trai
 
 [^9]: While critical speed represents a precise physiological boundary in theory, in practice we can only estimate it within certain error bounds. Rather than trying to train exactly at this theoretical point (or our estimation of it), it's more practical to define ranges above and below it. This way, we can be confident we're training either aerobically (below CS) or anaerobically (above CS), without worrying about hitting an exact pace that we can never know with perfect accuracy. I'll touch on this more in the in the post about training using critical speed.
 
-[^10]: For example, [Jakob Ingebrigtsen](https://worldathletics.org/athletes/norway/jakob-ingebrigtsen-14653717) often employs a negative split strategy in his 5km races, starting conservatively for the first 8-9 laps before treating the final laps like a 1500m race. This effectively transforms the race duration massively in his favour, allowing for a stronger finish. If Jakob runs the first few laps below critical speed then his whole $D'$ remains as he winds the pace up close to the end of the race. This only works for Jakub because his critical speed is higher than the other athletes --- his aerobic system is a powerhouse!
+[^10]: For example, [Jakob Ingebrigtsen](https://worldathletics.org/athletes/norway/jakob-ingebrigtsen-14653717) often employs a negative split strategy in his 5km races, starting conservatively for the first 8-9 laps before treating the final laps like a 1500m race. This effectively transforms the race duration massively in his favour, allowing for a stronger finish. If Jakob runs the first few laps below critical speed then his whole $D'$ remains as he winds the pace up close to the end of the race. This only works for Jakob because his critical speed is higher than the other athletes --- his aerobic system is a powerhouse!
 
 [^11]: When estimating critical speed via training data, using an effort adjusted pace as input to the model takes account of hills and potentially other factors like wind and running surface. 
 

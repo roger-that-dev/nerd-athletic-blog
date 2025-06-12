@@ -236,7 +236,7 @@ function createAnaerobicAerobicGraph(containerId) {
         .attr("y", d => y(d.anaerobic) - 2)
         .attr("width", 5)
         .attr("height", 5)
-        .attr("fill", "#FF6B35")
+        .attr("fill", "#1FADFF")
         .attr("opacity", 0.7);
 
     // Add scatter plot points for aerobic contribution
@@ -249,7 +249,7 @@ function createAnaerobicAerobicGraph(containerId) {
         .attr("y", d => y(d.aerobic) - 2)
         .attr("width", 5)
         .attr("height", 5)
-        .attr("fill", "#2A9D8F")
+        .attr("fill", "#1F3DFF")
         .attr("opacity", 0.7);
 
     // Add legend
@@ -263,7 +263,7 @@ function createAnaerobicAerobicGraph(containerId) {
         .attr("y", -3)
         .attr("width", 5)
         .attr("height", 5)
-        .attr("fill", "#FF6B35");
+        .attr("fill", "#1FADFF");
 
     legend.append("text")
         .attr("x", 15)
@@ -278,7 +278,7 @@ function createAnaerobicAerobicGraph(containerId) {
         .attr("y", -3)
         .attr("width", 5)
         .attr("height", 5)
-        .attr("fill", "#2A9D8F");
+        .attr("fill", "#1F3DFF");
 
     legend.append("text")
         .attr("x", 78)

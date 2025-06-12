@@ -5,6 +5,7 @@ tags: [testing, introduction]
 title: Hello World!
 excerpt: Welcome to Nerd Athletic's reboot! After a year-long hiatus, I'm returning to dive deep into the science behind running performance.
 image: hello-world.png
+published: true
 ---
 Welcome to the reboot of Nerd Athletic! After a year-long hiatus following the arrival of our second child[^1], I'm excited to return to writing. While sleep deprivation and nappy changes took precedence over blogging, those early parenting days are now behind us - our little one is thriving on solid foods and (mostly) sleeping through the night.
 
