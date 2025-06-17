@@ -59,6 +59,8 @@ finish_time 12:52:42.063000
 False
 ```
 
+The other curious thing to note is that (as seen in the image above) the `total_distance` for the session is `6.151.95` and the cumulative distance as measured by GPS ends at `6.151.95` --- the same value. However we know that the session truncates the last three record messages and yet still reports the total distance as `6.151.95`, when it should actually be `6,135.06` based upon the `total_elapsed_time` value in the session message.
+
 Now... If you search the web for information about this, there's the docs page I linked to above but nothing I could find that discusses this issue specifically. Anywhere. The AIs seem to know what the problem is though:
 
 > Yes, this is a common quirk with Garmin FIT files. The issue is that the session message's total_elapsed_time and the actual record timestamps don't always align perfectly. The session message's total_elapsed_time is often calculated as the time between when you started and stopped the activity on the device. However, the device continues recording data for a few seconds after you stop the activity. This means the last few records can have timestamps that are slightly after the session's official end time.
